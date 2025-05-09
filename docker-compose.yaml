@@ -1,0 +1,12 @@
+services:
+  pulsar:
+    image: apachepulsar/pulsar:4.0.0
+    container_name: pulsar-container
+    ports:
+      - "6650:6650"
+      - "8081:8080"
+    command: ["/pulsar/bin/pulsar", "standalone"]
+    restart: unless-stopped
+    volumes:
+      - ./init-pulsar.sh:/pulsar/init-pulsar.sh
+    entrypoint: ["/bin/sh", "-c", "bin/pulsar standalone & sleep 10 && sh /pulsar/init-pulsar.sh && tail -f /dev/null"]

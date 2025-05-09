@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "simple-producer": "ts-node src/simple/producer.ts",
+    "simple-consumer": "ts-node src/simple/consumer.ts",
+    "key-producer": "ts-node src/key-shared/producer.ts",
+    "key-consumer": "ts-node src/key-shared/consumer.ts"
+  },
+  "dependencies": {
+    "pulsar-client": "^1.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
